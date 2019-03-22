@@ -22,14 +22,17 @@ def create():
 
 
 def remove():
+    todel = []
     togli = input("\nInsert task to remove: ")
     for x in vet:
         if togli in x:
-            vet.remove(x)
-            print("Task removed succesfully\n")
-            break
-    print("The requested task doesn't exist\n")
-
+            todel.append(x)
+    if len(todel)==0:
+        print("There is no task that matches your request")
+        return
+    for x in todel:
+        vet.remove(x)
+        print("Task "+x+" removed succesfully\n")
 
 
 def lists():
